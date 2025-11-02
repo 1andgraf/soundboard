@@ -2,7 +2,7 @@
 
 An app like VoiceMod and Soundpad built with Electron.
 
-<img width="962" height="842" alt="Screenshot 2025-11-02 at 17 01 55" src="https://github.com/user-attachments/assets/98b7587c-0fb7-4806-81f0-c734b8f9a889" />
+<img width="481" height="421" alt="Screenshot 2025-11-02 at 17 01 55" src="https://github.com/user-attachments/assets/98b7587c-0fb7-4806-81f0-c734b8f9a889" />
 
 ## Features
 1) Uploaded sounds playback through your microphone
