@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>FL Soundboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        background-color: #1e1e1e;
+        color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        margin-top: 0px;
+      }
+
+      #controls,
+      #effects {
+        display: flex;
+        flex-direction: column; /* stack items vertically */
+        margin-bottom: 20px;
+        align-items: flex-start;
+      }
+
+      select,
+      input[type="range"],
+      button {
+        padding: 8px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 20px;
+        width: 125px; /* optional fixed width for alignment */
+      }
+
+      button {
+        background-color: #4d5e77;
+        color: #f0f0f0;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        margin-bottom: 20px;
+      }
+
+      button:hover {
+        background-color: #575757;
+      }
+
+      #buttons {
+        display: flex;
+        flex-direction: column; /* stack MP3 buttons vertically */
+        justify-content: flex-start;
+      }
+
+      #fileInput {
+        margin-bottom: 20px;
+      }
+
+      .sound-btn {
+        width: 170px;
+        height: 40px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+        margin: 0px;
+      }
+
+      .sound-btn:hover {
+        background-color: #005a99;
+      }
+
+      .sound-btn + button {
+        background-color: #cc0000;
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+        margin: 0px;
+      }
+
+      .stop-btn {
+        background-color: #630000;
+        width: 40px;
+        height: 40px;
+        margin: 0px;
+      }
+
+      #masterVol,
+      #pitchSlider,
+      #distSlider {
+        width: 90%; /* sliders take full width */
+      }
+
+      label {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .container1 {
+        background-color: #293843;
+        padding: 20px;
+        margin-right: 20px;
+        border-radius: 20px;
+        width: 300px;
+        height: 620px;
+      }
+      .container2 {
+        background-color: #293843;
+        padding: 30px;
+        border-radius: 20px;
+        width: 400px;
+        height: 600px;
+      }
+      #effects label {
+        margin-bottom: 0px;
+      }
+      #effects input {
+        margin-bottom: 10px;
+      }
+      #effects {
+        margin-top: 10px;
+        background-color: #1e2931;
+        padding: 25px;
+        border-radius: 15px;
+        width: 350px;
+        height: 220px;
+      }
+      .fqbutton {
+        width: 110px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container1">
+      <input id="fileInput" type="file" accept=".mp3,audio/*" multiple />
+      <div id="buttons"></div>
+    </div>
+    <div class="container2">
+      <h2>Soundboard</h2>
+
+      <div class="row">
+        <label>Input (mic)</label>
+        <select id="inputSelect"></select>
+        <button id="startMic">Start Mic</button>
+        <button id="stopMic" disabled>Stop Mic</button>
+      </div>
+
+      <div class="row">
+        <label>Virtual output</label>
+        <select id="virtualOutputSelect"></select>
+      </div>
+
+      <div class="row">
+        <label>Monitoring output</label>
+        <select id="monitorOutputSelect"></select>
+        <button id="toggleMonitor">Toggle Monitor</button>
+      </div>
+
+      <div class="row">
+        <h2>Effects</h2>
+        <div id="effects">
+          <label> Volume: <span id="volValue">100%</span> </label>
+          <input type="range" id="masterVol" min="0" max="1000" value="100" />
+          <label>Pitch: <span id="pitchValue">1.0</span>x</label>
+          <input
+            type="range"
+            id="pitchSlider"
+            min="0.5"
+            max="2.0"
+            value="1.0"
+            step="0.01"
+          />
+
+          <label>Distortion: <span id="distValue">0</span></label>
+          <input
+            type="range"
+            id="distSlider"
+            min="0"
+            max="1000"
+            value="0"
+            step="1"
+          />
+          <div class="fq" style="display: flex">
+            <button id="highFreqBtn" class="fqbutton">High Freq</button>
+            <button id="censorBtn" class="fqbutton">Censor</button>
+            <button id="bassBtn" class="fqbutton">Bass</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
