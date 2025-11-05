@@ -2,10 +2,10 @@
 
 An app like VoiceMod and Soundpad built with Electron.
 
-<img width="481" height="421" alt="Screenshot 2025-11-02 at 17 01 55" src="https://github.com/user-attachments/assets/98b7587c-0fb7-4806-81f0-c734b8f9a889" />
+<img width="628" height="550" alt="Screenshot 2025-11-02 at 17 01 55" src="https://github.com/user-attachments/assets/98b7587c-0fb7-4806-81f0-c734b8f9a889" />
 
 ## Features
-1) Uploaded sounds playback through your microphone
+1) Upload sounds and play them through your microphone
 2) Effects controls (distortion, gain, pitch)
 3) Censor sound button
 4) Bass and high frequency sound buttons
