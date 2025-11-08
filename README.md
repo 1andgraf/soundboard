@@ -16,3 +16,9 @@ A sound-playing app like Soundpad. Built with Electron.
 2) Put the virtual mic in the settings (You have to install BlackHole (MacOS) or VB-Cable (Windows))
 3) Put your monitoring output in the settings
 4) Upload your sounds and tweak the effects
+
+## Dev
+
+1) Clone repo
+2) npm install
+3) npm run
